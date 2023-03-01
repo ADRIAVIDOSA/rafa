@@ -2,14 +2,17 @@
 Explicaciones basicas
 
 ## Titulo 2
-Esto es un texto en negrita **negrita jaja**
+A continuacion una lista
 
 * linea 1 de la lista
 * linea 2 de la lista
 * linea 3 de la lista
 
 ## Titulo 2
-Esto es un texto en cursiva _cursiva_
+*cursiva* _cursiva_
+**negrita** __negrita__
+~~TACHADO~~
+~~***tachado negrita y cursiva***~~
 
 > Esto es una cita
 > Para destacar cosas concretas
