@@ -45,7 +45,7 @@ fun main(args : Array<String>) {
 ### Carácteres extendidos
 :poop: :alien: :cry: :imp:
 
-## Tablas
+### Tablas
 
 | id _character | name | age | level |
 | --- | --- | --- | --- |
@@ -53,3 +53,8 @@ fun main(args : Array<String>) {
 | 2 | Mariana | 20 | 100 |
 | 3 | Mortadelo | 100 | 1 |
 | 4 | Messi | 44 | 32 |
+
+### Escapar caracteres
+
+\# Ejemplo de escapado
+\* Ejemplo de escapado\*
