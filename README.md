@@ -7,35 +7,6 @@ Todo archivo .xml necesita una **etiqueta raiz**
 
 Hay varios tipos de etiquetas, las **pares** y ** impares**.
 
-
-
-# MARKDOWN VENTAJAS
-Ventajas de usar Markdown:
-
-    **Ventaja de uso**: Markdown es fácil de aprender y utilizar. Es un lenguaje simple y rápido de 
-	escribir, lo que lo hace ideal para crear documentación o textos rápidamente sin tener que 
-	preocuparse por el formato.
-
-    **Portabilidad**: El texto escrito en Markdown se puede convertir fácilmente a otros formatos como HTML, 
-	PDF, Word, etc. Esto significa que puedes crear tu documento en Markdown y luego exportarlo a 
-	cualquier formato que necesites sin tener que preocuparte por perder el formato original.
-
-    **Compatibilidad**: Markdown es compatible con muchos editores de texto, como Sublime Text, Atom, 
-	Visual Studio Code, entre otros. Además, también es compatible con muchas plataformas de blogging 
-	y gestores de contenido, como WordPress, Ghost, Jekyll, etc.
-
-    **Legibilidad**: Los documentos escritos en Markdown son muy legibles, ya que la sintaxis es muy simple 
-	y limpia. No hay distracciones visuales, como ocurre en los editores de texto tradicionales, lo que 
-	hace que sea fácil de leer y entender.
-
-    **Colaboración**: Al ser un lenguaje de marcado común, los miembros del equipo pueden colaborar en el 
-	mismo documento sin tener que preocuparse por las diferencias en los editores de texto o los sistemas 
-	rativos.
-
-    **Mantenimiento**: Es fácil de mantener y actualizar. Al utilizar un lenguaje de marcado como Markdown, 
-	es fácil hacer cambios en el documento original sin tener que preocuparse por la integridad del documento.
-
-
 ## Titulo 1
 
 ## Titulo 2
