@@ -20,15 +20,16 @@ Esto es un enlace a la mejor web del mundo:
 [CondorChem](http://condorchem.com)
 y [ESTO](http://enti.cat) es otro enlace.
 
-###Imagen incrustrada
+### Imagen incrustrada
 ![Nugguet](https://i.etsystatic.com/18862914/r/il/9ddd2d/3355087118/il_570xN.3355087118_rgbz.jpg)
 
-###Ejemplo de resaltado de sintaxis
-```
+### Ejemplo de resaltado de sintaxis
+```kotlin
 	
 // Hello World Program
 
 fun main(args : Array<String>) {
     println("Hello, World!")
 }
+
 ```
