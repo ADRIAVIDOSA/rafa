@@ -12,7 +12,7 @@ Hay varios tipos de etiquetas, las **pares** y ** impares**.
 # MARKDOWN VENTAJAS
 Ventajas de usar Markdown:
 
-    ** de uso**: Markdown es fácil de aprender y utilizar. Es un lenguaje simple y rápido de 
+    **Ventaja de uso**: Markdown es fácil de aprender y utilizar. Es un lenguaje simple y rápido de 
 	escribir, lo que lo hace ideal para crear documentación o textos rápidamente sin tener que 
 	preocuparse por el formato.
 
