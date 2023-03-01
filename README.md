@@ -1,5 +1,5 @@
 # Titulo 1
-Titulo1 Explicaciones basicas
+Explicaciones basicas
 
 ## Titulo 2
 Esto es un texto en negrita **negrita jaja**
