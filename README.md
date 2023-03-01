@@ -35,6 +35,6 @@ fun main(args : Array<String>) {
 ```
 
 ### Listas de tareas
-- [ ]
-- [X]
-- [ ]
+- [ ] Primera tarea
+- [X] Segunda tarea
+- [ ] Tercera tarea
