@@ -2,6 +2,11 @@
 llenguatge de marcas
 
 ## XML 
-Aquí iran los apuntes de DTD
+Aquí iran los apuntes de **XML**
+
+* uno
+* dos
+* tres
 
 ## DTD
+Los_apuntes_de DTD
