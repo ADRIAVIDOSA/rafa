@@ -15,3 +15,7 @@ Esto es un texto en cursiva _cursiva_
 > Para destacar cosas concretas
 > Como por ejemplo codigo
 >> Esto es una cita dentro de una cita
+
+Esto es un enlace a la mejor web del mundo:
+[CondorChem](http://condorchem.com)
+y [ESTO](http://enti.cat) es otro enlace.
