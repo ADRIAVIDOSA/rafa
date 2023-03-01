@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="'UTF-8" ?>
+<!DOCTYPE character SYSTEM "character.dtd">
+<character id_character="1">
+	<name>Eustaquio‹/name>
+	<surname>Mendoza</surname>
+	<!-- COMENTARIO -->
+	<age years="197" />
+	<race›Enano‹/race>
+	<class›Artificiero‹/class>
+	<gender abbrev="N"›Non-Binary</gender>
+	<height cm="130" />
+	<weight kq="80" />
+	<language abbrev="prt">Portugués</language>
+	<tienelaeso />
+	<weapons>
+		<weapon id_weapon="1" />
+		<weapon id_weapon="3" />
+		<weapon id_weapon="7" />
+		<weapon id_weapon="1" />
+	</weapons>
+</character>
