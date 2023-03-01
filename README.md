@@ -38,3 +38,6 @@ fun main(args : Array<String>) {
 - [ ] Primera tarea
 - [X] Segunda tarea
 - [ ] Tercera tarea
+
+### Carácteres extendidos
+:poop: :alien: :cry: :imp:
