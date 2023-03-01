@@ -1,8 +1,12 @@
 # XML
 XML significa _ExtensibleMarkupLenguage_.
+
 Es un lenguaje de transporte
+
 Esto es la **cabecera**: \<?xml version="1.0" encoding="UTF-8"?\>
+
 Todo archivo .xml necesita una **etiqueta raiz**
+
 Hay varios tipos de etiquetas, las **pares** y ** impares**.
 
 ## Titulo 1
