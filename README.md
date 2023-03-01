@@ -22,3 +22,13 @@ y [ESTO](http://enti.cat) es otro enlace.
 
 ###Imagen incrustrada
 ![Nugguet](https://i.etsystatic.com/18862914/r/il/9ddd2d/3355087118/il_570xN.3355087118_rgbz.jpg)
+
+###Ejemplo de resaltado de sintaxis
+```
+	
+// Hello World Program
+
+fun main(args : Array<String>) {
+    println("Hello, World!")
+}
+```
