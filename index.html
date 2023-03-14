@@ -31,30 +31,55 @@
 			font-family:sans-seriff;
 		}
 
-			
+		/* Nuevas propiedades CSS */
+		main ul li a:hover {
+			color: white;
+			background-color: #4285F4;
+			padding: 8px 16px;
+			border-radius: 5px;
+			text-decoration: none;
+		}
+
+		nav ul li {
+			display: inline-block;
+			margin-right: 16px;
+			font-size: 1.2rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			border-bottom: 3px solid transparent;
+		}
+
+		nav ul li.active,
+		nav ul li:hover {
+			border-bottom-color: red;
+		}
+
 	</style>
 </head>
 
+<body>
 	<header>
 		<h1><a href="index.html">Adrià Vidosa</a></h1>
-		<p>Alumno, tecnico en ciberseguridad, Programador</p>
+		<p>Alumno, técnico en ciberseguridad, programador</p>
 	</header>
 	<nav>
-		<ol>
+		<ul>
+			<li class="active"><a href="index.html">Inicio</a></li>
 			<li><a href="cv.html"><abbr title="Curriculum Vitae">CV</abbr></a></li>
 			<li><a href="hobbies.html">Hobbies</a></li>
 			<li><a href="contacto.html">Contacto</a></li>
-		</ol>
+		</ul>
 	</nav>
 	<main>
 		<h2>Alumno en:</h2>
-		<p>ENTI, Escola de Noves tecnologies de la informacio</p>
+		<p>ENTI, Escola de Noves tecnologies de la informació</p>
 		<blockquote>
-		En SQL no es lo mismo los JOINS que los JOINTS. <em>Steve Jobs</em>
+		En SQL no es lo mateix els JOINS que els JOINTS. <em>Steve Jobs</em>
 		</blockquote>
 		<h2>Ficha</h2>
 		<p><img src="https://d273yxk2oj202w.cloudfront.net/upldr/enti-classlife-education/2023/02/28/minithumbnail/loco.jpg" title="Foto Aty" alt="Foto de perfil de Class Life"/></p>
-		<h2>Assignaturas</h2>
+		<h2>Asignaturas</h2>
 		<ul>
 			<li>M01: Sistemas operativos</li>
 				<ul>
@@ -65,24 +90,6 @@
 				</ul>
 			<li>M02: Bases de datos</li>
 				<ul>
-					<li>UF1: Introduccion</li>
+					<li>UF1: Introducción</li>
 					<li>UF2: SQL, DML y DDL</li>
-					<li>UF3: Aseguramiento de la información</li>
-				</ul>
-			<li>M03: Lenguaje de marcas</li>
-				<ul>
-					<li>UF1: Programación XML</li>
-					<li>UF2: Aplicaciones XML</li>
-					<li>UF3: Sistemas de gestión empresarial</li>
-				</ul>				
-			
-		</ul>
-	</main>
-	<footer>
-		<h2>Informacion extra</h2>
-		<p>Adria vidosa (c) 2023</p>
-	</footer>
-</body>
-
-
-</html>
+					
