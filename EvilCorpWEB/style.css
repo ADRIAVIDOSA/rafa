@@ -1,0 +1,144 @@
+@font-face {
+	font-family: 'Rubik';
+	src: url('ruta/a/la/fuente/Rubik-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.rubik {
+	font-family: 'Rubik', sans-serif;
+}
+
+body {
+	background-color: #f2f2f2;
+	background-image: url('images/wallpaper.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding-top: 1500px;
+	font-family: 'Nunito', sans-serif
+}
+
+.title-container {
+	padding: 2px;
+	display: inline-block;
+}
+
+.name-container h1,
+.position-container h2 {
+	color: white;
+	margin: 0;
+	float: left;
+	margin-right: -50px;	/* ajusta el valor según lo necesites */
+}
+
+.header-background {
+	background-color: rgba(0, 0, 0, 0.8);
+	/*background-image: url('images/cabecera2.jpg');*/
+	background-size: cover;
+	background-position: center top;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 300px;
+	z-index: 1;
+}
+
+.header-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px 50px;
+	color: white;
+}
+
+h1 {
+	font-size: 3em;
+	margin-bottom: 0.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+
+
+.caja1 {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.8);
+	/*background-image: url('images/cabecera2.jpg');*/
+	display: inline-block;
+	vertical-align: middle;
+	width: 4%;
+	height: 500px;
+	margin: 20px;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+.caja2 {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.8);
+	/*background-image: url('images/cabecera2.jpg');*/
+	display: inline-block;
+	vertical-align: middle;
+	width: 45%;
+	height: 500px;
+	margin: 20px;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+
+main {
+	text-align: center;
+}
+
+.cajas-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 350px;	/*Margen respecto la cabecera*/
+}
+
+.caja1, .caja2 {
+	flex-basis: 40%;
+	height: 500px;	/*Pa abajo*/
+}
+.contact-container {
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	padding: 20px;
+	/*text-align: center;*/
+	margin: 0;
+}
+
+.social-media-list {
+	list-style-type: none;
+	padding: 3;
+	margin: 10;
+	display: flex; 
+}
+
+.social-media-list li {
+	margin-right: 100px; 
+}
+
+.social-media-list li img {
+	width: 100px; 
+	height: 90px; 
+}
+.top-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.top-right {
+	font-size: 30px;
+	padding-right: 20px;
+	padding-top: 20px;
+}
+a:link, a:visited, a:hover, a:active {
+	color: inherit;
+	text-decoration: none;
+}
