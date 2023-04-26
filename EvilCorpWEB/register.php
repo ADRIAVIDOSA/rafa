@@ -1,53 +1,91 @@
 <?php
-//Conexión a la base de datos
-$servername = "localhost";
-$username = "tu_usuario";
-$password = "tu_contraseña";
-$dbname = "usersdb";
+if (sizeof($_POST) > 0) {
+	require("./db.php");
+	$name 		= $_POST["name"];
+	$surname1 	= $_POST["surname1"];
+	$surname2 	= $_POST["surname2"];
+	$birthday 	= $_POST["birthday"];
+	$email 		= $_POST["email"];
+	$phone 		= $_POST["phone"];
+	$country 	= $_POST["country"];
+	$address 	= $_POST["address"];
+	$password 	= $_POST["password"];
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-if (!$conn) {
-	die("Conexión fallida: " . mysqli_connect_error());
+	//INSERT INTO users (rol, name, surname1, surname2, birthday, email, phone, country, address, password)
+	$stmt = $conn->prepare("INSERT INTO users
+		(rol, name, surname1, surname2, birthday, email, phone, country, address, password) VALUES (
+			:rol,
+			:name,
+			:surname1,
+			:surname2,
+			:birthday,
+			:email,
+			:phone,
+			:country,
+			:address,
+			:password,
+		);");
+	$stmt->bindParam(":rol", "client");
+	$stmt->bindParam(":name", $name);
+	$stmt->bindParam(":surname1", $surname1);
+	$stmt->bindParam(":surname2", $surname2);
+	$stmt->bindParam(":birthday", $birthday);
+	$stmt->bindParam(":email", $email);
+	$stmt->bindParam(":phone", $phone);
+	$stmt->bindParam(":country", $country);
+	$stmt->bindParam(":address", $address);
+	$stmt->bindParam(":password", $password);
+
+	$result = $stmt->execute();
+	print_r($result);
 }
 
-//Verificar si se ha enviado el formulario
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  //Validar campos
-  $name = mysqli_real_escape_string($conn, $_POST['name']);
-  $surname1 = mysqli_real_escape_string($conn, $_POST['surname1']);
-  $surname2 = mysqli_real_escape_string($conn, $_POST['surname2']);
-  $birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
-  $email = mysqli_real_escape_string($conn, $_POST['email']);
-  $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-  $country = mysqli_real_escape_string($conn, $_POST['country']);
-  $address = mysqli_real_escape_string($conn, $_POST['address']);
-  $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-  //Validar correo electrónico
-  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "El correo electrónico no es válido";
-    exit;
-  }
-
-  //Validar contraseña
-  if (!preg_match("/^[a-zA-Z0-9]{8,}$/", $password)) {
-    echo "La contraseña debe tener al menos 8 caracteres alfanuméricos";
-    exit;
-  }
-
-  //Hashear la contraseña
-  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-  //Insertar datos en la base de datos
-  $sql = "INSERT INTO users (name, surname1, surname2, birthday, email, phone, country, address, password)
-  VALUES ('$name', '$surname1', '$surname2', '$birthday', '$email', '$phone', '$country', '$address', '$hashed_password')";
-
-  if (mysqli_query($conn, $sql)) {
-    echo "Registro exitoso";
-  } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-  }
-
-  mysqli_close($conn);
-}
 ?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<h1><a href="index.php">Evil Corp</a></h1>
+	<div class="top-right">
+	</div>
+	<title>Registro de usuario</title>
+	<link rel="stylesheet" href="clients.css">
+</head>
+
+<body>
+	<h2>Registro de usuario</h2>
+	<form action="register.php" method="post">
+		<label for="name">Nombre:</label>
+		<input type="text" name="name" required><br>
+
+		<label for="surname1">Primer Apellido:</label>
+		<input type="text" name="surname1" required><br>
+
+		<label for="surname2">Segundo Apellido:</label>
+		<input type="text" name="surname2" required><br>
+
+		<label for="birthday">Fecha de Nacimiento:</label>
+		<input type="date" name="birthday" required><br>
+
+		<label for="email">Correo electrónico:</label>
+		<input type="email" name="email" required><br>
+
+		<label for="phone">Teléfono (sin prefijo):</label>
+		<input type="tel" name="phone" required><br>
+
+		<label for="country">País (nombre completo):</label>
+		<input type="text" name="country" required><br>
+
+		<label for="address">Dirección de domicilio:</label>
+		<input type="text" name="address" required><br>
+
+		<label for="password">Contraseña:</label>
+		<input type="password" name="password" required><br>
+
+		<input type="submit" value="Registrarse">
+	</form>
+</body>
+
+</html>

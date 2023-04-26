@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1><a href="index.html">Evil Corp</a></h1>
+<h1><a href="index.php">Evil Corp</a></h1>
 <div class="top-right">
 </div>
 	<title>Login</title>

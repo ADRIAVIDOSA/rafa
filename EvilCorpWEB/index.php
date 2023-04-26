@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Evil Corp Main page</title>
@@ -12,6 +13,7 @@
 		}
 	</script>
 </head>
+
 <body>
 	<header class="header-background">
 		<div class="header-container">
@@ -22,9 +24,9 @@
 					</div>
 					<div class="login-register-container">
 						<div class="top-right">
-							<a href="login.html">Iniciar sesión</a>
-							<a href="register.html"> | Registrarse | </a>
-							<a href="admin.html">Panel de administrador</a>
+							<a href="login.php">Iniciar sesión</a>
+							<a href="register.php"> | Registrarse | </a>
+							<a href="admin.php">Panel de administrador</a>
 						</div>
 					</div>
 				</div>
