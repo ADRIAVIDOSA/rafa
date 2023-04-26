@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enemy>
+    <name>Gigant</name>
+    <description>Es como un humano pero mide como 3 pisos de altura</description>
+    <health>40</health>
+	<strength>20</strength>
+</enemy>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enemy>
+    <name>Johny</name>
+    <description>Es un barbaro metido de droga</description>
+    <health>30</health>
+	<strength>15</strength>
+</enemy>
