@@ -13,7 +13,7 @@ if (sizeof($_POST) > 0) {
 	$phone 		= $_POST["phone"];
 	$country 	= $_POST["country"];
 	$address 	= $_POST["address"];
-	$password 	= $_POST["password"];
+	$password 	= $md5(_POST["password"]);
 
 	//INSERT INTO users (rol, name, surname1, surname2, birthday, email, phone, country, address, password)
 	$stmt = $conn->prepare("INSERT INTO users
