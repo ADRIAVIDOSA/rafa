@@ -11,7 +11,7 @@
 
 body {
 	background-color: #f2f2f2;
-	background-image: url('images/wallpaper.png');
+	background-image: url('Images/wallpaper.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -34,7 +34,7 @@ body {
 
 .header-background {
 	background-color: rgba(0, 0, 0, 0.8);
-	/*background-image: url('images/cabecera2.jpg');*/
+	/*background-image: url('Images/cabecera2.jpg');*/
 	background-size: cover;
 	background-position: center top;
 	position: absolute;
@@ -66,7 +66,7 @@ h2 {
 .caja1 {
 	color: white;
 	background-color: rgba(0, 0, 0, 0.8);
-	/*background-image: url('images/cabecera2.jpg');*/
+	/*background-image: url('Images/cabecera2.jpg');*/
 	display: inline-block;
 	vertical-align: middle;
 	width: 4%;
@@ -79,7 +79,7 @@ h2 {
 .caja2 {
 	color: white;
 	background-color: rgba(0, 0, 0, 0.8);
-	/*background-image: url('images/cabecera2.jpg');*/
+	/*background-image: url('Images/cabecera2.jpg');*/
 	display: inline-block;
 	vertical-align: middle;
 	width: 45%;

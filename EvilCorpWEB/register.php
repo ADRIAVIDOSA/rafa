@@ -1,6 +1,10 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 if (sizeof($_POST) > 0) {
 	require("./db.php");
+	$rol       	= "client";
 	$name 		= $_POST["name"];
 	$surname1 	= $_POST["surname1"];
 	$surname2 	= $_POST["surname2"];
@@ -23,9 +27,9 @@ if (sizeof($_POST) > 0) {
 			:phone,
 			:country,
 			:address,
-			:password,
+			:password
 		);");
-	$stmt->bindParam(":rol", "client");
+	$stmt->bindParam(":rol", $rol);
 	$stmt->bindParam(":name", $name);
 	$stmt->bindParam(":surname1", $surname1);
 	$stmt->bindParam(":surname2", $surname2);
