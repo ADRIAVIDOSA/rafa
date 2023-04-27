@@ -64,4 +64,6 @@
 			<ul class="social-media-list">
 				<li>
 					<a href="https://www.instagram.com/aty025">
-						<img src="images/Instagram.png" alt="Sí
+						<img src="images/Instagram.png">
+					<a href="https://mrrobot.fandom.com/es/wiki/Allsafe_Cybersecurity">
+						<img src="images/allsafe.png">
