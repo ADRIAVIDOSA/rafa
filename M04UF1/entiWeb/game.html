@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<link rel="icon" type="favicon.ico" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+	<link rel="stylesheet" href="common.css" />
+	<link rel="stylesheet" href="games.css" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://github.com/tara7ara">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/mart%C3%AD-tarras%C3%B3n-videla-a4b127226/">Linkedin</a></li>
+			<li><a href="cv.html">Curriculum</a></li>
+			<li><a href="contacto.html">Contacto</a></li>
+			<li><a href="games.html">Juego</a></li>
+        </ul>
+    </nav>
+	<main>
+		<h2>Juego de adivinanzas</h2>
+		<p id="adivinanza"></p>
+		<input type="text" id="respuestaUsuario" placeholder="Escribe tu respuesta aquí">
+		<button id="enviarRespuesta">Enviar</button>
+		<button id="cambiarAdivinanza">Cambiar adivinanza</button>
+		<p id="resultado"></p>
+	</main>
+	<footer>
+        <p>Made in <a href="juego.html">Catalonia</a></p>
+    </footer>
+	
+	<script>
+	  let adivinanzas = [];
+	  let adivinanzaActual;
+
+	  fetch('adivinanzas.json')
+		.then(response => response.json())
+		.then(data => {
+		  adivinanzas = data;
+		  mostrarAdivinanza();
+		});
+
+	  function mostrarAdivinanza() {
+		adivinanzaActual = adivinanzas[Math.floor(Math.random() * adivinanzas.length)];
+		document.getElementById('adivinanza').innerText = adivinanzaActual.adivinanza;
+	  }
+
+	  function esRespuestaCorrecta(respuestaUsuario, respuestaCorrecta) {
+		if (respuestaUsuario === respuestaCorrecta) {
+		  return true;
+		}	
+		return false;
+	  }
+
+	  document.getElementById('enviarRespuesta').addEventListener('click', () => {
+		const respuestaUsuario = document.getElementById('respuestaUsuario').value.trim().toLowerCase();
+		const respuestaCorrecta = adivinanzaActual.respuesta.trim().toLowerCase();
+
+		if (esRespuestaCorrecta(respuestaUsuario, respuestaCorrecta)) {
+		  document.getElementById('resultado').innerText = '¡Respuesta correcta!';
+		} else {
+		  document.getElementById('resultado').innerText = 'Respuesta incorrecta, inténtalo de nuevo.';
+		}
+	  });
+	  
+
+  document.getElementById('cambiarAdivinanza').addEventListener('click', () => {
+    mostrarAdivinanza();
+    document.getElementById('resultado').innerText = '';
+    document.getElementById('respuestaUsuario').value = '';
+  });
+	</script>
+
+
+</body>
+</html>

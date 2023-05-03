@@ -1,0 +1,46 @@
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: justify;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#adivinanzaContainer {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#adivinanza {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#respuestaUsuario {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+#enviarRespuesta, #cambiarAdivinanza {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+#enviarRespuesta:hover, #cambiarAdivinanza:hover {
+    background-color: #444;
+}
+#resultado {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
