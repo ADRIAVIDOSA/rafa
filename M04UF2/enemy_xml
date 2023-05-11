@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <enemies>
 	<enemy>
-		<name>45</name>
-		<damage>4</damage>
-		<health>4</health>
-		<description>4</description>
+		<name>Ivelian</name>
+		<damage>300</damage>
+		<health>3000</health>
+		<description>Tiene que pelear rapido porque tiene que ir a vender criptomonedas</description>
 	</enemy>
 	<enemy>
-		<name>4</name>
-		<damage>4</damage>
-		<health>4</health>
-		<description>4</description>
+		<name>Richard</name>
+		<damage>2000</damage>
+		<health>2500</health>
+		<description>Es bastante fuerte pero tiene fobia a los hackers</description>
+	</enemy>
+	<enemy>
+		<name>Marcel</name>
+		<damage>5000</damage>
+		<health>200</health>
+		<description>Si te descuidas te desconecta la pantalla</description>
+	</enemy>
+	<enemy>
+		<name>Erik</name>
+		<damage>2000</damage>
+		<health>4000</health>
+		<description>Es gitano.</description>
 	</enemy>
 </enemies>

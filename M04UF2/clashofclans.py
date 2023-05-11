@@ -2,7 +2,7 @@ import xmltodict
 import random
 
 
-enemy_files = ["enemy1.xml", "enemy2.xml", "enemy3.xml", "enemy4.xml"]
+enemy_files = ["enemy.xml"]
 enemy_file = random.choice(enemy_files)
 
 with open(enemy_file, "r") as f:

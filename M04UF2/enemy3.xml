@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<enemy>
-    <name>Esqueleto</name>
-    <description>Es el esqueleto de un barbaro</description>
-    <health>10</health>
-	<strength>5</strength>
-</enemy>

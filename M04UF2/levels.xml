@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<levels>
+	<level num="1" xp="0" />
+	<level num="2" xp="10" />
+	<level num="3" xp="20" />
+	<level num="4" xp="35" />
+	<level num="5" xp="75" />
+	<level num="6" xp="120" />
+</levels>

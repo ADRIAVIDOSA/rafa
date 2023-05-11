@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<enemy>
-    <name>Barbaro</name>
-    <description>Es un barbaro</description>
-    <health>15</health>
-	<strength>7</strength>
-</enemy>
