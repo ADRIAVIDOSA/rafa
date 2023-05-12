@@ -3,53 +3,73 @@ import xmltodict
 import os
 import random	
 
-nombre = input("Como te llamas? ")
-os.system("clear")
-
 enemy_files = "enemy_xml"
 
-print("BIENVENIDO "+(nombre)+" A NUESTRO JUEGO")
+print("BIENVENIDO A NUESTRO JUEGO")
+
+nombre = input("Como te llamas? ")
+difficulty = ""
+player_health = 0
+player_damage = 0
+
+while difficulty not in ["facil", "intermedio", "dificil"]:
+    difficulty = input("Seleccione dificultad (facil/intermedio/dificil): ")
+
+if difficulty == "facil":
+    player_health = 5000
+    player_damage = random.randint(1000, 2000)
+elif difficulty == "intermedio":
+    player_health = 1000
+    player_damage = random.randint(2000, 3000)
+elif difficulty == "dificil":
+    player_health = 500
+    player_damage = random.randint(3000, 4000)
 
 with open(enemy_files, "r") as f:
     xml_string = f.read()
 
 enemy_dict = xmltodict.parse(xml_string)
 
-def select_enemy(number):
-    name = str(enemy_dict["enemies"]["enemy"][number]["name"])
-    description = str(enemy_dict["enemies"]["enemy"][number]["description"])
-    health = int(enemy_dict["enemies"]["enemy"][number]["health"])
-    strength = int(enemy_dict["enemies"]["enemy"][number]["damage"])
+def select_enemy(enemies):
+    enemy = random.choice(enemies)
+    name = str(enemy["name"])
+    description = str(enemy["description"])
+    health = int(enemy["health"])
+    strength = int(enemy["damage"])
+    print("\n***************************************")
     print(name)
     print(description)
-    print(health)
-    print(strength)
-    return health
+    print("***************************************\n")
+    return enemy, health, strength
 
-player_health = 20
+eliminated_enemies = []
 while True:
-    numero = 0
-    juego = select_enemy(numero)	
-    action = input("¿Qué quieres hacer? (ataca/nothing)")
+    remaining_enemies = [enemy for enemy in enemy_dict["enemies"]["enemy"] if enemy not in eliminated_enemies]
+    if not remaining_enemies:
+        print("¡Felicidades! ¡Has eliminado a todos los enemigos!")
+        break
+    juego, enemy_health, enemy_damage = select_enemy(remaining_enemies)	
+    print(f"\nVida del jugador: {player_health}")
+    print(f"Daño del jugador: {player_damage}")
+
+    print("\nEs el turno del jugador")
+    action = input("¿Qué quieres hacer? (ataca)")
 
     if action == "ataca":
-        damage = random.randint(0, 5)
-        juego -= damage
+        damage = random.randint(player_damage-1000, player_damage+1000)
+        enemy_health -= damage
         print(f"Has quitado {damage} puntos de vida al enemigo.")
     else:
-        print("Espabila que te matan")
+        print("Espabila papu")
+        player_health -= enemy_damage
 
-    player_damage = random.randint(0, 2)
-    player_health -= player_damage
-    print(f"El enemigo te ha quitado {player_damage} puntos de vida.")
+    if enemy_health <= 0:
+        print(f"{juego['name']} ha sido derrotado.")
+        eliminated_enemies.append(juego)
+    else:
+        print(f"El enemigo te ha quitado {enemy_damage} puntos de vida.")
+        player_health -= enemy_damage
 
-    if (juego <= 0) and (numero >= len(enemy_dict["enemies"]["enemy"])):
-        print("Acabaste con él. ¡Felicidades!")
-        break
-    
     if player_health <= 0:
         print("Mala suerte papu, has perdido.")
         break
-    
-    numero += 1
-    juego = select_enemy(numero)
