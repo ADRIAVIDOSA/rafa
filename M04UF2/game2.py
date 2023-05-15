@@ -4,6 +4,35 @@ import xml.etree.ElementTree as ET
 import os
 import sys
 
+def pcolor(texto, color="default", nueva_linea=True):
+    colores = {
+        "negro": "\033[30m",
+        "rojo": "\033[31m",
+        "verde": "\033[32m",
+        "amarillo": "\033[33m",
+        "azul": "\033[34m",
+        "morado": "\033[35m",
+        "cian": "\033[36m",
+        "blanco": "\033[37m",
+        "default": "\033[0m"
+    }
+    
+    codigo_color = colores.get(color.lower(), colores["default"])
+    texto_coloreado = codigo_color + texto + colores["default"]
+    
+    if nueva_linea:
+        print(texto_coloreado)
+    else:
+        print(texto_coloreado, end="")
+
+def limpiar_pantalla():
+    # Limpiar pantalla en Windows
+    if os.name == "nt":
+        os.system("cls")
+    # Limpiar pantalla en Unix/Linux/MacOS
+    else:
+        os.system("clear")
+
 class Player:
     def __init__(self, name=None, damage=None, health=None):
         self.name = name
@@ -72,14 +101,6 @@ class Game:
         )
         self.enemies = self.loadEnemiesFromXML()  # Cargar los datos de los enemigos desde enemies.xml
 
-
-
-
-
-
-
-
-
     def loadEnemies(self):
         try:
             tree = ET.parse("enemies.xml")
@@ -135,15 +156,21 @@ class Game:
                     self.enemies.remove(self.current_enemy)
                 else:
                     self.current_enemy = None
-
+                    print("\033[33m██   ██  █████  ███████      ██████   █████  ███    ██  █████  ██████   ██████  ██ ")
+                    print("\033[32m██   ██ ██   ██ ██          ██       ██   ██ ████   ██ ██   ██ ██   ██ ██    ██ ██ ")
+                    print("\033[36m███████ ███████ ███████     ██   ███ ███████ ██ ██  ██ ███████ ██   ██ ██    ██ ██ ")
+                    print("\033[34m██   ██ ██   ██      ██     ██    ██ ██   ██ ██  ██ ██ ██   ██ ██   ██ ██    ██    ")
+                    print("\033[35m██   ██ ██   ██ ███████      ██████  ██   ██ ██   ████ ██   ██ ██████   ██████  ██ ")
+                    self.deleteSaveGame()
+                    sys.exit(0)
 
     def playerTurn(self):
-        print("¡Es tu turno, jugador {}!".format(self.player.name))
+        print("\n¡Es tu turno, jugador {}!".format(self.player.name))
         print("1. Atacar")
         print("2. Guardar partida y salir")
 
         choice = input("Elige una opción: ")
-
+        limpiar_pantalla()
         if choice == '1':
             damage = self.player.attack()
             self.attackEnemy(damage)
@@ -165,11 +192,16 @@ class Game:
             print("El enemigo {} te atacó con {} de daño.".format(self.current_enemy.name, damage))
 
     def gameLoop(self):
+        limpiar_pantalla()
         while self.player.health > 0 and (self.current_enemy or self.enemies):
             self.playerTurn()
             self.enemyTurn()
-            self.saveGame()
 
+            if self.player:
+                print("\033[35mJugador: {} \033[0m| \033[32mVida: {} \033[0m| \033[31mDaño: {}\033[0m".format(self.player.name, self.player.health, self.player.damage))
+            if self.current_enemy:
+                print("\033[31mEnemigo: {} \033[0m| \033[35mVida: {} \033[0m| \033[31mDaño: {}\033[0m".format(self.current_enemy.name, self.current_enemy.health, self.current_enemy.damage))
+            self.saveGame()
         if self.player.health <= 0:
             print("Has perdido. ¡Game Over!")
         elif not self.enemies and not self.current_enemy:
@@ -183,28 +215,30 @@ class Game:
     @staticmethod
     def startGame():
         game = Game()
-
+        
         print("¡Bienvenido al juego!")
-        print("1. Nueva partida")
-        print("2. Cargar partida")
 
+        print("1. Nueva partida")
+        if os.path.exists("./savegame.json"):
+            save_data = game.readSaveGame()
+            last_game_username=save_data["playerStats"]["name"]
+            savegame_exists = True
+            print("2. Cargar partida [{}]".format(last_game_username))
+        else:
+            savegame_exists = False
+        
         choice = input("Elige una opción: ")
 
         if choice == '1':
             game.newGame()
             player_name = input("Ingresa el nombre del jugador: ")
             game.player.name = player_name
-        elif choice == '2':
-            player_name = input("Ingresa el nombre del jugador en la partida guardada: ")
-            game.loadGame(player_name)
+        elif choice == '2' and savegame_exists:
+            game.loadGame(last_game_username)
         else:
             print("Opción inválida. Por favor, selecciona una opción válida.")
 
         if game.player:
-            print("Jugador: {} | Vida: {} | Daño: {}".format(game.player.name, game.player.health, game.player.damage))
-            if game.current_enemy:
-                print("Enemigo: {} | Vida: {} | Daño: {}".format(game.current_enemy.name, game.current_enemy.health,
-                                                                game.current_enemy.damage))
             game.gameLoop()
 
 if __name__ == "__main__":
