@@ -1,0 +1,15 @@
+{
+    "currentEnemy": "Jacinto",
+    "difficulty": "facil",
+    "enemyStats": {
+        "health": 1000,
+        "damage": 1000
+    },
+    "playerStats": {
+        "name": "Jamoncio",
+        "health": 1000,
+        "damage": 1000
+    },
+    "remainingEnemies": ["Erik", "Ivelian"]
+    
+}
