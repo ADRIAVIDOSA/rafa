@@ -1,0 +1,25 @@
+#Gitignore by @LiLPandemio
+
+# Archivos temporales generados por editores de texto
+*~
+
+# Archivos de respaldo creados por editores de texto
+.*.swp
+.*.swo
+.*.swx
+
+# Archivos de guardado de juegos
+*savegame*
+
+# Carpeta generada por Python
+__pycache__/
+
+# Carpeta de entorno virtual
+venv/
+
+# Archivos de configuración local (vscode)
+.env
+
+# Logs y registros
+*.log
+logs/
