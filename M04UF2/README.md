@@ -1,1 +1,2 @@
 # M04-UF2
+En este proyecto hemos aprendido XML y JSON y como gestionar la infoarmacion con estos lenguajes de marcas y python. En python hemos creado un videojuego en el que te enfrentas a unos enemigos en forma de aventura de texto. Has de derrotarlos a todos para mostrar el mensaje de victoria. El juego tiene 2 slots para guardar partidas. Uno en XML y el otro en JSON.
